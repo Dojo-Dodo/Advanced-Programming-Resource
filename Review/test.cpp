@@ -1,19 +1,24 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
-int pow(int a){
-    return a*a;
+void swap(int &a, int &b){
+    int temp = a;
+    a = b;
+    b = temp;
 }
 
-float distance(int x1, int y1, int x2, int y2){
-    return sqrt((pow(x2-x1)) + (pow(y2-y1)));
+void bubbleSort(int arr[], int n){
+    for(int i=0; i<n-1; i++){
+        for(int j=0; j<n-i-1; j++){
+            if(arr[j] > arr[j+1]){
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
 }
 
-int main(void){
-    int x1, y1, x2, y2;
-    cin >> x1 >> y1 >> x2 >> y2;
-    
-    cout << distance(x1, y1, x2, y2) << endl;
+
+
+int main(int argc, char* argv[]){
 }

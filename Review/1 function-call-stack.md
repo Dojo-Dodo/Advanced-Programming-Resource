@@ -29,9 +29,11 @@ int main(void){
     cin >> x1 >> y1 >> x2 >> y2;
     
     cout << distance(x1, y1, x2, y2) << endl;
+    return 0;
 }
 ```
 
 ## Visualization
+![alt text](https://github.com/Dojo-Dodo/Advanced-Programming-Resource/blob/main/Assets/Diagram-of-stack.png?raw=true "diagram of my program")
 
-<img width="1721" height="892" alt="Image" src="https://github.com/user-attachments/assets/6bb0ac9c-e902-438c-80e5-1530c9b423f3" />
+The program runs the most recently called function. When that function finishes, it’s destroyed and control returns to the previous one.
