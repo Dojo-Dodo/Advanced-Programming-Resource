@@ -14,6 +14,7 @@ void isPalindrome(int number){
     if(number < 0) isPalin = false;
     if(number >= 0 && number < 10) isPalin = true;
 
+    
     while(left < right){
         if(*left != *right){
             isPalin = false;

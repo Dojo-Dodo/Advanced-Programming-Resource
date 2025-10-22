@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
         }
     }
     //cout << "Minimum element is " << a[min_Index] << endl;
-    cout << "GCD is " << GCD << endl;
+    cout << GCD << endl;
     delete[] a;
     return 0;
 }

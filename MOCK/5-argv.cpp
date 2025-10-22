@@ -8,3 +8,7 @@ int main(int argc, char* argv[]){
     }
     return 0;
 }
+
+// How to run
+// g++ 5-argv.cpp -o IHateThis
+// ./IHateThis code cuz it is boring
