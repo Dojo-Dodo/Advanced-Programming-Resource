@@ -24,7 +24,8 @@ An argument is an value that you pass to a program on the command line.
 using namespace std;
 
 int main(int argc, char* argv[]){
-    for(int i=0; i<argc; i++){
+    int n = argc-1;
+    for(int i=1; i<n; i++){
         cout << argv[i] << endl; 
     }
     return 0;
