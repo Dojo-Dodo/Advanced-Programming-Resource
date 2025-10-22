@@ -32,4 +32,3 @@ void C_function(int a){
     c += 10;
     cout << c << endl;
 }
-
