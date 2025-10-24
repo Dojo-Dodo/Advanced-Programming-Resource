@@ -8,9 +8,9 @@ void C_function(int a);
 int main(){
     int a = 1;
     for(int i=0; i<3; i++){
-        A_function(a);
+        //A_function(a);
         //B_function(a);
-        //C_function(a);
+        C_function(a);
     }
     a -= 1;
     cout << a << endl;
