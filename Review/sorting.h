@@ -34,6 +34,7 @@ void selectionSort(int* a, int n){
             }
         }
         if(mi != i){
+            swap(a[mi], a[i]);
             display(a,n);
         }
     }
