@@ -17,8 +17,8 @@ int main(int argc, char* argv[]){
     
     //Sorting Algorithm
 
-    bubbleSort(a,n);
-    //selectionSort(a,n);
+    //bubbleSort(a,n);
+    selectionSort(a,n);
     //insertionSort(a,n);
 
     delete[] a;

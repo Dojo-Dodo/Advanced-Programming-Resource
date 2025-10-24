@@ -28,27 +28,25 @@ void selectionSort(int* a, int n){
     cout << "=====Selection Sort=====" << endl;
     for(int i=0; i<n-1; i++){
         int mi = i;
-        for(int j=i+1; j<n-1; j++){
+        for(int j=i+1; j<n; j++){
             if(a[mi] > a[j]){
                 mi = j;
             }
         }
-        swap(a[i], a[mi]);
-        display(a,n);
+        if(mi != i){
+            display(a,n);
+        }
     }
 }
 
 void insertionSort(int* a, int n){
     cout << "=====Insertion Sort=====" << endl;
-     for(int i = 1; i < n; ++i) {
-        int key = a[i];
-        int j = i - 1;
-
-        while (j >= 0 && a[j] > key) {
-            a[j + 1] = a[j];
-            j--;
+    for (int i = 1; i < n; ++i) {
+        int j = i;
+        while (j > 0 && a[j - 1] > a[j]) {
+            swap(a[j - 1], a[j]);
+            display(a, n);
+            --j;
         }
-        a[j + 1] = key;
-        display(a,n);
     }
 }
