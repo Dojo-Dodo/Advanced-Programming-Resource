@@ -3,24 +3,18 @@
 
 using namespace std;
 
-class department{
+class technology{
     private:
-        string departmentName;
-    public:
-        void get_departmentName(){
-            cout << departmentName << endl;
-        }
-        void set_departmentName(const string &s){
-            departmentName = s;
-        }
-};
-
-//Inheritance happened here
-class technology: public department{
-    private:
-        int budget;
+        int budget = 0;
         int spending = 0;
         string projectName;
+
+        void spend_money(int n){
+            spending += n;
+            budget -= n;
+            cout << "total spending :" << spending << endl;
+        }
+
     public:
         void get_projectName(){
             cout << projectName << endl;
@@ -31,24 +25,16 @@ class technology: public department{
         void set_budget(int n){
             budget = n;
         }
-        void spend_money(int n){
-            spending += n;
-            budget -= n;
-            cout << "total spending :" << spending << endl;
-        }
+        
         void get_money_left(){
-            cout << "Money left : " << budget << endl;
-        }
-
-        void do_research(){
-            // Doing something....
-            // very complex logic
-            spend_money(100);
-            spend_money(200);
-            spend_money(300);
+            cout << "Money left :" << budget << endl;
         }
 };
 int main(int argc, char* argv[]){
-    
+    technology *p = new technology;
+    (*p).set_name("Project 1");
+    p->set_name("Project 1");
+
+    p->get_projectName();
     return 0;
 }

@@ -64,7 +64,16 @@ test.cpp:22:16: note: declared private here
 # NOTE array and pointer to the class
 - We can also create pointer, which points to the class
 - We also can create a array of class to store multiple class objects.
+``` C++
+int main(int argc, char* argv[]){
+    technology *p = new technology;
+    (*p).set_name("Project 1");
+    p->set_name("Project 1");
 
+    p->get_projectName();
+    return 0;
+}
+```
 # Abstraction
 - hiding the messy details and showing only what you need to use as the user.
 ``` C++
