@@ -13,6 +13,7 @@ class LL{
         ~LL();
         void insertNode(int);
         void printList();
+        void insertNodeAfter(int, int);
 };
 
 LL::LL(){
@@ -21,6 +22,7 @@ LL::LL(){
 }
 
 LL::~LL(){
+    cout << "====Destructor====" << endl;
     node* temp = hol;
     while(temp != nullptr){
         node* nxt = temp->getNext();           // save next before delete
@@ -36,9 +38,12 @@ void LL::insertNode(int x){
         hol = new node(x);
     }
     else{
-        node* temp = new node(x);
-        temp->setNext(hol);
-        hol = temp;
+        node* t = hol;
+        while(t->getNext() != nullptr){
+            t = t->getNext();
+        }
+        node* n = new node(x);
+        t->setNext(n);
     }
     size++;
 }
@@ -50,6 +55,30 @@ void LL::printList(){
         temp = temp->getNext();
     }
     cout << temp->getValue() << endl;
+}
+
+void LL::insertNodeAfter(int newNode, int target){
+    if(size>0){
+        
+        node* t = this->hol;
+
+        while(t != nullptr && t->getValue() != target){
+            t = t->getNext();
+        }
+        if(t == nullptr){
+            cout << "we cannot find " << target << " in LL" << endl;
+            return;
+        }
+
+        node* n = new node(newNode);
+
+        n->setNext(t->getNext());
+        t->setNext(n);
+    }
+    else{
+        cout << "The linked list is empty!" << endl;
+    }
+    
 }
 
 #endif
