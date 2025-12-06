@@ -4,53 +4,63 @@ class Pokemon{
         string Name;
         int Health;
         char Type;
-        char Gender;
         int Level;
-        int Exp;
         Pokemon* nextForm;
     
     public:
-        Pokemon(string name = "MISSING",int h = 10,char t = 'u',char g = 'u',char l = 1,
-                 int e = 0);
+        Pokemon(string name = "MISSING",int h = 0,char t = 'u',char l = 1,
+                Pokemon* next = nullptr);
 
         void printStats();
         void set_nextForm(Pokemon*);
+        void LevelUp(int );
         Pokemon* evolve();
 
 };
 
-Pokemon::Pokemon(string n, int h,char t, char g, char l,
-                 int e){
+Pokemon::Pokemon(string n, int h,char t, char l, Pokemon* next){
     this->Name = n;
     this->Health = h;
     this->Type = t;
-    this->Gender = g;
     this->Level = l;
-    this->Exp = e;
-    this->nextForm = nullptr;                  
+    this->nextForm = next;
 }
 
 void Pokemon::set_nextForm(Pokemon* x){
     this->nextForm = x;
+}
+void Pokemon::LevelUp(int x){
+    Level += x;
+    cout << Name << " grew to LV. " << Level << endl;
 }
 
 void Pokemon::printStats(){
     cout << "========= STATS =========" << endl;
     cout << "Name: "<< Name << endl;
     cout << "Type: "<< Type << endl;
-    cout << "Gender: " <<  Gender << endl;
     cout << "Level: " <<  Level << endl;
-    cout << "Exp: " << Exp << endl;
 }
 
-Pokemon* Pokemon::evolve() {
-    // If level is high enough and next form exists, return next form
-    if (Level >= 16 && Level < 36 && nextForm != nullptr) {
-        return nextForm;
+void evolve(){
+    if(level >= nextForm->level){
+        cout << Name << " has evolved to " << nextForm->Name << endl;
+        
     }
-    else if (Level >= 36 && nextForm != nullptr) {
-        return nextForm;
+    else{
+        cout << "Need LV. "<< Level << " to evolve!" << endl;
     }
-    // Otherwise, stay as current pokemon
-    return this;
 }
+
+
+Pokemon* Pokemon::createCharmander(){
+    Pokemon p1("Charmander",'f',25,1);
+    Pokemon p2("Charmeleo",'f',75,16);
+    Pokemon p3("Charizard",'f',150,36);
+    
+    p1.set_nextForm(p2);
+    p2.set_nextForm(p3);
+
+    Pokemon* t = p1;
+    return t;
+}
+

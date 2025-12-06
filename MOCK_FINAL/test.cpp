@@ -1,14 +1,15 @@
 #include <iostream>
 using namespace std;
-#include "BST.h"
+#include "doubleLL.h"
 
 int main(int argc, char* argv[]){
-    BST tree;
+    doubleLL L1;
+    L1.insertNodeStart(10);
+    L1.insertNodeStart(20);
+    L1.insertNodeStart(30);
+    L1.insertNodeEnd(40);
+    //insertNodeAfter(int input, int target)
 
-    tree.insertNode(10);
-    tree.insertNode(11);
-    tree.insertNode(12);
-
-    tree.inOrder(tree.get_root());
+    L1.printList();
     return 0;
 }
