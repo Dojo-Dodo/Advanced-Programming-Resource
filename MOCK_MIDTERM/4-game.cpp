@@ -1,14 +1,16 @@
-#include<iostream>
+#include <iostream>
+#include <cstring>
 using namespace std;
 
 int main(){
-    const char* games[] = {"Grow A Garden", "Steal A Brainrot", "A Dusty Trip"};
-    
-    for(auto s : games){
-        cout << s[3] << endl;
+
+    string arr[3] = {"Hello", "World", "Programming"};
+
+    for(int i=0; i<3; i++){
+        char* ptr = &arr[i][0];
+
+        cout << *(ptr+1) << endl;
+        cout << ptr[3] << endl;
     }
-
-    cout << *(*(games+1)+1) << endl;
-
     return 0;
 }
